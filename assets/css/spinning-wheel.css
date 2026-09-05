@@ -1,0 +1,268 @@
+.clickcosmo-spinning-wheel,
+.clickcosmo-spinning-wheel *,
+.clickcosmo-spinning-wheel *::before,
+.clickcosmo-spinning-wheel *::after {
+    box-sizing: border-box;
+}
+
+.clickcosmo-spinning-wheel {
+    --ccsw-size: min(560px, 90vw);
+    --ccsw-accent: #ffd54d;
+    --ccsw-text: #e8e8ff;
+    --ccsw-rim: #2a2a45;
+    color: var(--ccsw-text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.clickcosmo-spinning-wheel .ccsw-wrap {
+    width: min(95vw, 900px);
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+}
+
+.clickcosmo-spinning-wheel .ccsw-board {
+    position: relative;
+    width: var(--ccsw-size);
+    height: var(--ccsw-size);
+    display: grid;
+    place-items: center;
+}
+
+.clickcosmo-spinning-wheel .ccsw-wheel {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+}
+
+.clickcosmo-spinning-wheel .ccsw-pointer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 24px solid var(--ccsw-accent);
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
+    z-index: 20;
+}
+
+.clickcosmo-spinning-wheel .ccsw-site-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    z-index: 15;
+}
+
+.clickcosmo-spinning-wheel .ccsw-controls {
+    width: min(95vw, 560px);
+    border: 1px solid #22283a;
+    background: #14182a;
+    border-radius: 12px;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.clickcosmo-spinning-wheel .ccsw-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.clickcosmo-spinning-wheel .ccsw-flexcol {
+    display: grid;
+    gap: 6px;
+    width: 100%;
+}
+
+.clickcosmo-spinning-wheel .ccsw-input-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.clickcosmo-spinning-wheel .ccsw-name-input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #333a55;
+    background: #0f1324;
+    color: #e8e8ff;
+}
+
+.clickcosmo-spinning-wheel .ccsw-button {
+    background: linear-gradient(180deg,#ffd54d,#f7b801);
+    color: #2b1d00;
+    font-weight: 800;
+    letter-spacing: .3px;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(247,184,1,.3), inset 0 1px 0 rgba(255,255,255,.35);
+}
+
+.clickcosmo-spinning-wheel .ccsw-button:active,
+.clickcosmo-spinning-wheel .ccsw-delete-name:active {
+    transform: translateY(1px);
+}
+
+.clickcosmo-spinning-wheel .ccsw-button:disabled {
+    cursor: default;
+    opacity: .65;
+}
+
+.clickcosmo-spinning-wheel .ccsw-secondary-button {
+    background: #333a55;
+    color: #e8e8ff;
+    box-shadow: none;
+}
+
+.clickcosmo-spinning-wheel .ccsw-delete-name {
+    background: #333a55;
+    color: #e8e8ff;
+    font-weight: 800;
+    border: none;
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.clickcosmo-spinning-wheel .ccsw-help-text {
+    opacity: .7;
+    font-size: 12px;
+}
+
+.clickcosmo-spinning-wheel .ccsw-admin-tip {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px dashed #5e668a;
+    border-radius: 8px;
+    background: #0f1324;
+    color: #e8e8ff;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.clickcosmo-spinning-wheel .ccsw-admin-tip[hidden] {
+    display: none;
+}
+
+.clickcosmo-spinning-wheel .ccsw-admin-tip code {
+    color: var(--ccsw-accent);
+    font-weight: 800;
+}
+
+.clickcosmo-spinning-wheel .ccsw-admin-tip-hide {
+    flex-shrink: 0;
+    background: #333a55;
+    color: #e8e8ff;
+    border: none;
+    border-radius: 7px;
+    padding: 6px 9px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.clickcosmo-spinning-wheel .ccsw-status {
+    min-width: 54px;
+    text-align: right;
+}
+
+.clickcosmo-spinning-wheel .ccsw-winner {
+    min-height: 1.6em;
+    text-align: center;
+    font-size: 18px;
+}
+
+.clickcosmo-spinning-wheel .ccsw-credit {
+    font-size: 8px;
+    color: #fff;
+}
+
+.clickcosmo-spinning-wheel .ccsw-credit a {
+    color: #fff;
+}
+
+.clickcosmo-spinning-wheel .ccsw-modal-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    place-items: center;
+    z-index: 100000;
+}
+
+.clickcosmo-spinning-wheel .ccsw-modal-content {
+    background: #14182a;
+    border: 2px solid var(--ccsw-accent);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(247, 184, 1, 0.5);
+    text-align: center;
+    width: min(90vw, 400px);
+}
+
+.clickcosmo-spinning-wheel .ccsw-modal-title {
+    color: var(--ccsw-accent);
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.clickcosmo-spinning-wheel .ccsw-modal-winner-name {
+    color: var(--ccsw-text);
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 10px 0 20px;
+    letter-spacing: .5px;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    word-break: break-word;
+}
+
+@media (max-width: 580px) {
+    .clickcosmo-spinning-wheel {
+        --ccsw-size: 90vw;
+    }
+
+    .clickcosmo-spinning-wheel .ccsw-controls {
+        width: 90vw;
+    }
+
+    .clickcosmo-spinning-wheel .ccsw-admin-tip {
+        align-items: flex-start;
+    }
+}
