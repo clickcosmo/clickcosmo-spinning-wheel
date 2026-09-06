@@ -2,7 +2,7 @@
 /*
 Plugin Name: ClickCOSMO Spinning Wheel
 Description: Responsive WordPress spinning wheel for name selection with bulk entry, persistent lists, automatic winner removal, and optional hidden winner targeting [clickcosmo_wheel].
-Version: 1.0.3
+Version: 1.0.4
 Author: ClickCOSMO
 Author URI: https://clickcosmo.com
 ClickCOSMO Support: yes
