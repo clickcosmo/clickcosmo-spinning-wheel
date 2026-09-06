@@ -410,8 +410,8 @@
             const sweep = fullTurn / labels.length;
             const pointerAngle = -Math.PI / 2;
             const targetCenterAngle = index * sweep + sweep / 2;
-            const minimumSpins = 4;
-            const randomExtraSpins = 1 + Math.floor(Math.random() * 2);
+            const minimumSpins = 6;
+            const randomExtraSpins = 1 + Math.floor(Math.random() * 3);
             const startRotation = rotation;
 
             const targetRotation = pointerAngle - targetCenterAngle;
@@ -420,7 +420,7 @@
             const targetDelta = (targetNormalized - currentNormalized + fullTurn) % fullTurn;
             const finalRotation = startRotation + ((minimumSpins + randomExtraSpins) * fullTurn) + targetDelta;
 
-            const duration = 3300 + Math.random() * 900;
+            const duration = 4300 + Math.random() * 900;
             const startTime = performance.now();
 
             function frame(time) {
