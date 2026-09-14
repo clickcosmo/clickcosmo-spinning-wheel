@@ -86,5 +86,5 @@ jobs:
         run: |
           gh release create "$TAG" "cc-spinning-wheel-$VERSION.zip" \
             --target "$GITHUB_SHA" \
-            --title "ClickCOSMO Spinning Wheel $VERSION" \
+            --title "$TAG" \
             --generate-notes
