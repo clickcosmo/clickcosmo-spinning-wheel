@@ -1,11 +1,6 @@
 name: Auto Release
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "cc-spinning-wheel.php"
   workflow_dispatch:
 
 permissions:
